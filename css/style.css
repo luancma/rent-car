@@ -288,30 +288,6 @@ section h2 {
         padding: 0 4rem;
     }
 
-    .container {
-        background-color: #FAFAFA;
-        transform: translateY(-100px);
-        position: relative;
-        z-index: 2;
-        max-width: 96vw !important;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .search--element {
-        transform: translateY(-40px);
-        position: relative;
-        z-index: 2;
-        max-width: var(--desktop-container-width);
-        height: 5.7rem;
-        background-color: #f5f5f5;
-        border-radius: 0.5rem;
-        box-shadow: var(--default-shadow);
-    }
-
     .content {
         background-color: #f5f5f5;
     }
