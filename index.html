@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+      integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY="
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/xstate@4.27.0/dist/xstate.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <title>AlugarBR</title>
+  </head>
+  <body>
+    <header>
+      <!-- create a background image block  -->
+      <div class="bg-image">
+        <div class="bg-text">
+          <h1>AlugarBR</h1>
+          <p>Encontre seu carro no lugar certo!</p>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="search--element">
+        <div class="col-md-4 col-12 search-text">
+          <div class="form-floating">
+            <input
+              type="tel"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Seu telefone"
+            />
+            <label for="floatingInput">Modelo do carro</label>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <select class="form-select" aria-label="Marca">
+            <option selected>Marca</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select" aria-label="Ano">
+            <option selected>Ano</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <div class="col-md-2 d-flex justify-content-center">
+          <button type="button" class="btn btn-primary override-button">Pesquisar</button>
+        </div>
+      </div>
+      <div class="content">
+        <!-- listagem de carros -->
+        <section id="destaques" class="">
+          <h2>Destaques</h2>
+          <!-- grid with 3 items -->
+          <div class="home-presentation-grid">
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car1.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 1</h3>
+                <p>Marca: Chevrolet</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car2.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 2</h3>
+                <p>Marca: Chevrolet</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car3.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 3</h3>
+                <p>Marca: Audi</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car3.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 3</h3>
+                <p>Marca: Audi</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car3.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 3</h3>
+                <p>Marca: Audi</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+            <div class="home-card default-shadow">
+              <div class="image-container">
+                <img src="./images/car3.jpg" alt="car3" />
+              </div>
+              <div class="card-content">
+                <h3>Carro 3</h3>
+                <p>Marca: Audi</p>
+                <p>Preço: 40000000000</p>
+                <p>Ano: 2070</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 d-flex justify-content-center cta-wrapper">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg override-button"
+            >
+              Ver todos
+            </button>
+          </div>
+        </section>
+
+        <section id="diferencial" class="diferencial">
+          <h2>Nosso diferencial</h2>
+          <div class="details-card">
+            <div class="details-card__content">
+              <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
+              <h3>Carros de qualidade</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="details-card__content">
+              <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              <h3>Equipe Selecionada</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="details-card__content">
+              <i class="fa fa-rocket fa-3x" aria-hidden="true"></i>
+
+              <h3>Entrega Rápida</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="feedback" class="feedback">
+          <h2>Opnião dos nossos clientes</h2>
+          <div class="feedback-cards--list">
+            <div class="feedback-card">
+              <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+              <h3>Ótimo serviço!</h3>
+              <p>
+                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
+                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+              </p>
+            </div>
+            <div class="feedback-card">
+              <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+              <h3>Ótimo serviço!</h3>
+              <p>
+                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
+                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+              </p>
+            </div>
+            <div class="feedback-card">
+              <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+              <h3>Ótimo serviço!</h3>
+              <p>
+                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
+                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+              </p>
+            </div>
+            <div class="feedback-card">
+              <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+              <h3>Ótimo serviço!</h3>
+              <p>
+                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
+                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact">
+          <!-- form contact with name, email, data de nasciomento, tipo de veículo esperado, text área -->
+          <h2>Tire suas dúvidas</h2>
+          <form class="row g-2">
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email </label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="Seu telefone"
+                />
+                <label for="floatingInput">Telefone</label>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Mais detalhes"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                ></textarea>
+                <label for="floatingTextarea2">Sua Dúvida</label>
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-row-reverse">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg override-button"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+  <!-- import a script from ./js/xstateExemple.js -->
+  <script src="./js/xstateExample.js"></script>
+</html>
