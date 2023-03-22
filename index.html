@@ -28,21 +28,22 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
-    <title>AlugarBR</title>
+    <script src="https://unpkg.com/xstate@4/dist/xstate.js"></script>
+    <title>RentTop</title>
   </head>
   <body>
     <header>
       <!-- create a background image block  -->
       <div class="bg-image">
         <div class="bg-text">
-          <h1>AlugarBR</h1>
+          <h1>RentTop</h1>
           <p>Encontre seu carro no lugar certo!</p>
         </div>
       </div>
     </header>
     <main class="container">
-      <div class="search--element">
-        <div class="col-md-4 col-12 search-text">
+      <div class="search--element" data-isloaded="false">
+        <div class="col-md-4 col-12 search-wrapper">
           <div class="form-floating">
             <input
               type="tel"
@@ -71,8 +72,10 @@
           </select>
         </div>
 
-        <div class="col-md-2 d-flex justify-content-center">
-          <button type="button" class="btn btn-primary override-button">Pesquisar</button>
+        <div class="col-md-2 col-12 button-wrapper">
+          <button type="button" class="btn btn-primary override-button">
+            Pesquisar
+          </button>
         </div>
       </div>
       <div class="content">
@@ -159,67 +162,83 @@
           </div>
         </section>
 
-        <section id="diferencial" class="diferencial">
+        <section id="diferencial" class="diferencial" data-ishidden="true">
           <h2>Nosso diferencial</h2>
           <div class="details-card">
             <div class="details-card__content">
               <i class="fa fa-cog fa-3x" aria-hidden="true"></i>
               <h3>Carros de qualidade</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>
+                Experimente o melhor do conforto e segurança com nossos carros.
+              </p>
             </div>
             <div class="details-card__content">
               <i class="fa fa-users fa-3x" aria-hidden="true"></i>
               <h3>Equipe Selecionada</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>
+                Nossa equipe está sempre pronta para atender todas as suas
+                necessidades.
+              </p>
             </div>
             <div class="details-card__content">
               <i class="fa fa-rocket fa-3x" aria-hidden="true"></i>
 
               <h3>Entrega Rápida</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>
+                Tenha mais tempo para aproveitar sua viagem com nossa entrega
+                rápida e eficiente.
+              </p>
             </div>
           </div>
         </section>
 
-        <section id="feedback" class="feedback">
+        <section id="feedback" class="feedback" data-ishidden="true">
           <h2>Opnião dos nossos clientes</h2>
           <div class="feedback-cards--list">
             <div class="feedback-card">
               <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
-              <h3>Ótimo serviço!</h3>
+              <h3>João Melo!</h3>
               <p>
-                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
-                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+                "Excelente experiência de aluguel de carro com este site! A
+                reserva foi fácil de fazer e a retirada do carro foi rápida e
+                eficiente. O carro estava em ótimo estado e limpo, e a equipe de
+                atendimento foi muito prestativa e amigável.
               </p>
             </div>
             <div class="feedback-card">
               <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
-              <h3>Ótimo serviço!</h3>
+              <h3>Marcos Silva!</h3>
               <p>
-                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
-                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+                Aluguei um carro com este site para uma viagem de fim de semana
+                e não poderia estar mais feliz com a escolha. O processo de
+                reserva foi muito simples e a retirada do carro foi rápida e
+                fácil.
               </p>
             </div>
             <div class="feedback-card">
               <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
-              <h3>Ótimo serviço!</h3>
+              <h3>Tiago Solza!</h3>
               <p>
-                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
-                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+                Tive uma ótima experiência com este site de aluguel de carro. A
+                equipe de atendimento foi muito prestativa e gentil desde o
+                início, ajudando-me a escolher o carro certo para minhas
+                necessidades e orçamento.
               </p>
             </div>
             <div class="feedback-card">
               <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
-              <h3>Ótimo serviço!</h3>
+              <h3>Patricia Machado!</h3>
               <p>
-                Lorem impson dsddso sadjdsads dasd dsa dsad ad sa sdd sad adds
-                addsa dasdsadsadsok odod oasd odo das dasod saodas.
+                Não poderia estar mais satisfeito com o serviço prestado por
+                este site de aluguel de carro. A reserva foi muito fácil de
+                fazer online e a retirada do carro foi rápida e eficiente. O
+                carro em si era limpo, confortável e em excelente estado.
               </p>
             </div>
           </div>
         </section>
 
-        <section class="contact">
+        <section class="contact" data-ishidden="true">
           <!-- form contact with name, email, data de nasciomento, tipo de veículo esperado, text área -->
           <h2>Tire suas dúvidas</h2>
           <form class="row g-2">
@@ -269,7 +288,10 @@
                 <label for="floatingTextarea2">Sua Dúvida</label>
               </div>
             </div>
-            <div class="col-12 d-flex flex-row-reverse">
+
+            <div
+              class="d-flex justify-content-center col-md-12 email-buttom-wrapper"
+            >
               <button
                 type="button"
                 class="btn btn-primary btn-lg override-button"
@@ -282,6 +304,51 @@
       </div>
     </main>
   </body>
+  <footer>
+    <div class="footer-background"></div>
+    <!-- copyright text -->
+    <div class="footer-content">
+      <div class="col-12 d-flex justify-content-center">
+        <p class="text-center">
+          © - Todos os direitos reservados
+          <br />
+          Desenvolvido por
+          <a
+          target="_blank"
+            class="dev-reference"
+            href="
+            https://www.linkedin.com/in/luancma/
+            "
+            >Luan CMA</a
+          >
+        </p>
+      </div>
+      <div class="social-icon--group">
+        <!-- facebook icon -->
+        <a
+          class="social-icon"
+          href="https://www.facebook.com/luiz.fernando.5810"
+          target="_blank"
+          ><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i
+        ></a>
+        <!-- instagram icon -->
+        <a
+          class="social-icon"
+          href="https://www.instagram.com/luizfernando_oliveira/"
+          target="_blank"
+          ><i class="fa fa-instagram fa-3x" aria-hidden="true"></i
+        ></a>
+        <!-- linkedin icon -->
+        <a
+          class="social-icon"
+          href="https://www.linkedin.com/in/luiz-fernando-oliveira-oliveira-0b1b3b1b3/"
+          target="_blank"
+          ><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i
+        ></a>
+      </div>
+    </div>
+  </footer>
   <!-- import a script from ./js/xstateExemple.js -->
-  <script src="./js/xstateExample.js"></script>
+  <script src="./js/animationsDispatch.js"></script>
+  <script src="./js/scrollAnimation.js"></script>
 </html>
